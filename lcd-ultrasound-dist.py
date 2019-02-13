@@ -1,3 +1,5 @@
+#This file shows the ultrasound sensor distance on an LCD. Use the other file if you want to use monitor only.
+
 from time import sleep_ms, ticks_ms
 from machine import I2C, Pin, DAC, PWM
 import esp8266_i2c_lcd 

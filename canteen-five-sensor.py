@@ -1,3 +1,5 @@
+#This file measures five sensor distances and writes them on an LCD every second, and once a minute onto a web page.
+
 try:
     from time import sleep_ms, ticks_ms
     from machine import I2C, Pin, DAC, PWM
@@ -9,8 +11,8 @@ try:
     import machine
     import json
     
-    SSID="hh3dlabs"
-    PASSWORD="3dlabshh12345"
+    SSID="YOUR_SSID"
+    PASSWORD="YOUR_PASSWORD"
     port=100
     wlan=None
     s=None
@@ -76,7 +78,7 @@ try:
         sleep_ms(1000) #hold on for 1 second
         lcd.move_to(0, 0) #move cursor to top left corner
         lcd.putstr("Connected           ") #write the string to LCD, note the blanks to erase the previous message
-        url = "http://www.sabulo.com/canteen.php"
+        url = "YOUR_RECIPIENT_URL"
         headers = {'content-type': 'application/json'}
         data = {'message': 'WLAN connected'}
         jsonObj = json.dumps(data)
@@ -155,7 +157,7 @@ try:
         minuteCounter += 1
         if (minuteCounter % 60 == 0):
           try:
-            url = "http://www.sabulo.com/canteen.php"
+            url = "YOUR_RECIPIENT_URL"
             headers = {'content-type': 'application/json'}
             data = {'message': myQueueSensorData + " " + myQueueStatus }
             jsonObj = json.dumps(data)
@@ -171,7 +173,7 @@ try:
     main()
     
 except Exception as e:
-    url = "http://www.sabulo.com/canteen.php"
+    url = "YOUR_RECIPIENT_URL"
     headers = {'content-type': 'application/json'}
     data = {'message': myQueueStatus}
     jsonObj = json.dumps(data)

@@ -1,3 +1,5 @@
+#This file shows the ultrasound sensor distance on monitor only. Use the other file if you want to use an LCD.
+
 from time import sleep_ms, ticks_ms
 from machine import I2C, Pin, DAC, PWM
 from hcsr04 import HCSR04 #the driver for the ultrasound 

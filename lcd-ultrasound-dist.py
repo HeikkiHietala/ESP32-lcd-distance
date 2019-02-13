@@ -1,4 +1,5 @@
 #This file shows the ultrasound sensor distance on an LCD. Use the other file if you want to use monitor only.
+#It assumes you have an LCD that has the I2C piggyback with four connectors, VCC, GND, SDA and SCL. 
 
 from time import sleep_ms, ticks_ms
 from machine import I2C, Pin, DAC, PWM
